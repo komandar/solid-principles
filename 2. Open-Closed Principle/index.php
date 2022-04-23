@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // composer dumpautoload -o
 require 'vendor/autoload.php';
 

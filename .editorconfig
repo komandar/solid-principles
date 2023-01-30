@@ -26,9 +26,15 @@ indent_style = tab
 [*.json]
 indent_size = 2
 
+[composer.json]
+indent_size = 4
+
 #################################################
-; make
+; just + make
 #################################################
+
+[{justfile}]
+indent_size = 2
 
 [{Makefile,makefile}]
 indent_style = tab
@@ -44,5 +50,5 @@ trim_trailing_whitespace = false
 ; YAML
 #################################################
 
-[*.{yml,yaml}]
+[{*.yml,*.yaml}]
 indent_size = 2

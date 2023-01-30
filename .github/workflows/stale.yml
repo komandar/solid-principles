@@ -3,17 +3,17 @@ name: Mark stale issues
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 3 * * 0"
 
 jobs:
   stale:
-
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
 
     steps:
+<<<<<<< Updated upstream
     - uses: actions/stale@v7
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -23,3 +23,13 @@ jobs:
         exempt-issue-labels: 'blocked,must,should,keep'
     - name: Print outputs
       run: echo ${{ join(steps.stale.outputs.*, ',') }}
+=======
+      - uses: actions/stale@v7
+        with:
+          stale-issue-message: "This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions."
+          days-before-stale: 30
+          days-before-close: 5
+          exempt-issue-labels: "blocked,must,should,keep"
+      - name: Print outputs
+        run: echo ${{ join(steps.stale.outputs.*, ',') }}
+>>>>>>> Stashed changes
